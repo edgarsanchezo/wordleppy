@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+ <html>
+   <head>
+     <title>Wordle PPY</title>
+ 		<link rel="stylesheet" href="style.css">
+     <script src="script.js" defer></script>
+   </head>
+<header>
+    <p>Wordle PPY</p>
+</header>
+   <body>
+    <div class="container">
+        <div id="game-board">
+            <!-- Tablero de 6 filas y 5 columnas -->
+            <div class="row">
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+            </div>
+            <div class="row">
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+            </div>
+            <div class="row">
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+            </div>
+            <div class="row">
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+            </div>
+            <div class="row">
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+            </div>
+            <div class="row">
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+                <div class="tile"></div>
+            </div>
+        </div>
+
+        <!-- Botones de Control -->
+        <div class="controls">
+			<!--
+			<input type="text" id="word-input" maxlength="5" placeholder="Ingresa palabra">
+			<button id="submit-word">Enviar</button>
+			-->
+			<input type="text" id="guess-input">
+			<button id="guess-button">Intentar</button>
+        </div>
+
+        <!-- Mensajes de Estado -->
+        <div id="message-container"></div>
+		<div id="grid"></div>
+		<p id="guesses">
+	
+    </div>
+
+    <script src="script.js"></script>
+</body>
+<footer>
+    <p>&copy; 2024 Edgar - Todos los derechos reservados.</p>
+</footer>
+ </html>

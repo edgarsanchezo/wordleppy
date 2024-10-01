@@ -1,0 +1,142 @@
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+			font-family: 'Poppins', sans-serif;
+        }
+        header {
+            
+            text-align: center;
+			font-size: 2.5rem;
+            font-weight: bold;
+            
+			background-color: #88AADD;
+			margin: 0;
+            padding: 30px, 30px;
+            position: sticky;
+
+			border-bottom-right-radius: 10px;
+			border-bottom-left-radius: 10px;
+        }
+
+        footer {
+			position: fixed;
+			left: 0;
+			bottom: 0;
+			width: 100%;
+			background-color: #88AADD;
+			
+			color: #000000;
+			font-size: 0.9rem;
+			text-align: center;
+			
+			border-top-left-radius: 10px;
+			border-top-right-radius: 10px;
+
+        }
+        footer p {
+            font-size: 0.9rem;
+        }
+        footer a {
+            color: #3b82f6;
+            text-decoration: none;
+        }		
+		
+        body {
+            background-color: #f8fafc;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+    
+    
+ #guess-input {
+   display: block;
+   margin: 0 auto 20px;
+   padding: 10px;
+   font-size: 18px;
+   width: 250px;
+   border: 1px solid #ccc;
+ }
+    
+ #guess-button {
+   display: block;
+   margin: 0 auto;
+   padding: 10px 20px;
+   font-size: 18px;
+   background-color: #88AADD;
+   color: #000000;
+   transition: color 0.8s ease;
+   border: none;
+   border-radius: 3px;
+ }
+ 
+  #guess-button:hover{
+   color: #335588;
+
+ }
+    
+ button:active {
+ 	transform: scale(0.95);
+ }
+    
+ .letter {
+     border: 1px solid black;
+     padding: 3px;
+     margin: 3px;
+     min-width: 20px;
+     text-align: center;
+     display: inline-block
+ }
+ 
+ .container {
+    text-align: center;
+}
+
+#game-board {
+    display: grid;
+    gap: 5px;
+    margin: 20px auto;
+}
+    
+.row {
+    display: flex;
+    justify-content: center;
+}
+
+.tile {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #000000;
+    margin: 5px;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFFFFF;
+	border-radius: 10px;
+	box-shadow: 
+        4px 4px 8px rgba(136, 170, 221, 0.8), /* Sombra con el color #88AADD */
+        4px 4px 8px rgba(255, 255, 255, 0.5); /* Sombra con el color #FFFFFF */
+}
+
+.tile.filled {
+    border: 2px solid #565758;
+}
+
+.tile.correct {
+    background-color: #6aaa64;
+}
+
+.tile.present {
+    background-color: #c9b458;
+}
+
+.tile.absent {
+    background-color: #3a3a3c;
+}
+    
+ .input-area{
+     margin: 30px;
+ }
