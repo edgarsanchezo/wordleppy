@@ -19,9 +19,9 @@ construirGameBoard();
 function construirKeyboard() {
   // Definición del teclado QWERTY con ñ
   const rows = [
-    ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"],
-    ["A", "S", "D", "F", "G", "H", "J", "K", "L", "Ñ"],
-    ["↵", "Z", "X", "C", "V", "B", "N", "M", "⌫"],
+    ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P'],
+    ['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'Ñ'],
+    ['↵', 'Z', 'X', 'C', 'V', 'B', 'N', 'M', '⌫'],
   ];
 
   // Selección del contenedor del teclado
