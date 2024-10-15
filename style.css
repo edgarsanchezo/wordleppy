@@ -94,7 +94,7 @@ body {
   height: 50px;
   margin: 2px;
   background-color: #d3d6da;
-  border: 1px solid #999;
+  border: 1px solid #999999;
   border-radius: 5px;
   font-size: 18px;
   text-transform: uppercase;
@@ -103,7 +103,7 @@ body {
 }
 
 .key:active {
-  background-color: #S;
+  background-color: #bbbbbb;
 }
 
 .key.wide {
