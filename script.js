@@ -1,54 +1,123 @@
-function construirGameBoard() {
-  const gameBoard = document.getElementById("game-board");
-  for (let i = 0; i < 6; i++) {
-    let row = document.createElement("div");
-    row.className = "row";
+// Configuración del teclado
+const filas = [
+    ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"],
+    ["A", "S", "D", "F", "G", "H", "J", "K", "L", "Ñ"],
+    ["↵", "Z", "X", "C", "V", "B", "N", "M", "⌫"],
+];
+
+// Variables de control del tablero
+const tablero = document.getElementById("tablero");
+const tecladoDiv = document.getElementById("teclado");
+let intentos = 6;                // Número máximo de intentos
+let palabra = "EDGAR";           // Palabra a adivinar
+let filaActual = 0;
+let columnaActual = 0;
+let palabraActual = "";
+
+// Crear tablero de 6 filas y 5 columnas
+for (let i = 0; i < 6; i++) {
+    let fila = document.createElement("div");
+    fila.className = "fila";
+    fila.setAttribute("data-row", i);
 
     for (let j = 0; j < 5; j++) {
-      let tile = document.createElement("div");
-      tile.className = "tile";
-      row.appendChild(tile);
+        let celda = document.createElement("div");
+        celda.classList.add("celda");
+        celda.setAttribute("data-col", j);
+        fila.appendChild(celda);
     }
-
-    gameBoard.appendChild(row);
-  }
+    tablero.appendChild(fila);
 }
 
-construirGameBoard();
+// Generar teclado dinámicamente
+filas.forEach((fila) => {
+    const filaDiv = document.createElement("div");
+    filaDiv.className = "teclado-fila";
 
-function construirKeyboard() {
-  // Definición del teclado QWERTY con ñ
-  const rows = [
-    ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P'],
-    ['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'Ñ'],
-    ['↵', 'Z', 'X', 'C', 'V', 'B', 'N', 'M', '⌫'],
-  ];
+    fila.forEach((tecla) => {
+        const button = document.createElement("button");
+        if (tecla === "↵" || tecla === "⌫") {
+            button.className = "tecla ancha";
+        } else {
+            button.className = "tecla";
+        }
+        button.textContent = tecla;
+        button.value = tecla;
 
-  // Selección del contenedor del teclado
-  const keyboardDiv = document.getElementById("keyboard");
-
-  // Generar cada fila y tecla del teclado
-  rows.forEach((row) => {
-    // Crear un contenedor para cada fila
-    const rowDiv = document.createElement("div");
-    rowDiv.className = "keyboard-row";
-
-    // Crear cada tecla como un botón
-    row.forEach((key) => {
-      const button = document.createElement("button");
-
-      if (key === "↵" || key === "⌫") {
-        button.className = "key wide";
-      } else {
-        button.className = "key";
-      }
-      button.textContent = key;
-      rowDiv.appendChild(button);
+        // Asignar eventos de clic a cada tecla
+        button.addEventListener("click", () => handleKeyClick(tecla));
+        filaDiv.appendChild(button);
     });
 
     // Añadir la fila al contenedor principal
-    keyboardDiv.appendChild(rowDiv);
-  });
+    tecladoDiv.appendChild(filaDiv);
+});
+
+// Función que maneja las teclas presionadas
+function handleKeyClick(tecla) {
+	if (filaActual >= intentos) return; // No permitir más entradas si se alcanzó el máximo de intentos
+
+    if (tecla === "⌫") {
+        deleteLetter();
+    } else if (tecla === "↵") {
+        submitWord();
+    } else if (columnaActual < 5) {
+        addLetter(tecla);
+    }
 }
 
-construirKeyboard();
+// Agregar una letra al tablero
+function addLetter(letter) {
+    const fila = document.querySelector(`[data-row='${filaActual}']`);
+    const celda = fila.querySelector(`[data-col='${columnaActual}']`);
+    celda.textContent = letter;
+    palabraActual += letter;
+    columnaActual++;
+}
+
+// Borrar la última letra
+function deleteLetter() {
+    if (columnaActual > 0) {
+        columnaActual--;
+        const fila = document.querySelector(`[data-row='${filaActual}']`);
+        const celda = fila.querySelector(`[data-col='${columnaActual}']`);
+        celda.textContent = "";
+        palabraActual = palabraActual.slice(0, -1);
+    }
+}
+
+// Enviar palabra
+function submitWord() {
+    if (columnaActual === 5) {
+		// Validación de la palabra
+		if (palabraActual.toUpperCase() === palabra) {
+            alert(`¡Felicidades! La palabra es "${palabra}".`);
+            ReiniciarJuego();
+        } else {
+            alert(`Intenta de nuevo. Palabra ingresada: "${palabraActual}".`);
+			filaActual++;
+			columnaActual = 0;
+			palabraActual = "";
+            
+            if (filaActual >= intentos) {
+                alert(`Lo siento, has agotado tus intentos. La palabra era "${palabra}".`);
+                ReiniciarJuego();
+            }
+        }
+    } else {
+        alert("La palabra debe tener 5 letras.");
+    }
+}
+
+// Reiniciar el juego
+function ReiniciarJuego() {
+    filaActual = 0;
+    columnaActual = 0;
+    palabraActual = "";
+
+    // Limpiar el tablero
+    const celdas = document.querySelectorAll(".celda");
+    celdas.forEach(celda => {
+        celda.textContent = "";
+    });
+}

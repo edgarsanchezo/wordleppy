@@ -1,134 +1,131 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
 }
 
 header {
-  text-align: center;
-  font-size: 2.5rem;
-  font-weight: bold;
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
 
-  background-color: #88aadd;
-  margin: 0;
-  padding: 30px, 30px;
-  position: sticky;
+    background-color: #88aadd;
+    margin: 0;
+    padding: 30px, 30px;
+    position: sticky;
 
-  border-bottom-right-radius: 10px;
-  border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
 
 body {
-  background-color: #f8fafc;
-  color: #333333;
-  line-height: 1.6;
-  overflow-x: hidden;
+    background-color: #f8fafc;
+    color: #333333;
+    line-height: 1.6;
+    overflow-x: hidden;
 }
 
-.container {
-  text-align: center;
+.contenedor {
+    text-align: center;
 }
 
-#game-board {
-  display: grid;
-  gap: 2px;
-  margin: 20px auto;
+#tablero {
+    display: grid;
+    gap: 2px;
+    margin: 20px auto;
 }
 
-.row {
-  display: flex;
-  justify-content: center;
+.fila {
+    display: flex;
+    justify-content: center;
 }
 
-.tile {
-  width: 50px;
-  height: 50px;
-  border: 1px solid #333333;
-  margin: 2px;
-  text-transform: uppercase;
-  font-size: 1.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #ffffff;
-  border-radius: 10px;
-  box-shadow: 4px 4px 8px rgba(136, 170, 221, 0.8)
-    /* Sombra con el color #88AADD */
-    ,
-    4px 4px 8px rgba(255, 255, 255, 0.5);
-  /* Sombra con el color #FFFFFF */
+.celda {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #333333;
+    margin: 2px;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 4px 4px 8px rgba(136, 170, 221, 0.8)
+            /* Sombra con el color #88AADD */,
+        4px 4px 8px rgba(255, 255, 255, 0.5);
+    /* Sombra con el color #FFFFFF */
 }
 
-.tile.filled {
-  border: 2px solid #565758;
+.celda.filled {
+    border: 2px solid #565758;
 }
 
-.tile.correct {
-  background-color: #6aaa64;
+.celda.correct {
+    background-color: #6aaa64;
 }
 
-.tile.present {
-  background-color: #c9b458;
+.celda.present {
+    background-color: #c9b458;
 }
 
-.tile.absent {
-  background-color: #3a3a3c;
+.celda.absent {
+    background-color: #3a3a3c;
 }
 
 /* TECLADO */
-.keyboard-container {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
+.teclado-contenedor {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
 }
 
-.keyboard-row {
-  display: flex;
-  justify-content: center;
-  gap: 2px;
+.teclado-fila {
+    display: flex;
+    justify-content: center;
+    gap: 2px;
 }
 
-.key {
-  width: 40px;
-  height: 50px;
-  margin: 2px;
-  background-color: #d3d6da;
-  border: 1px solid #999999;
-  border-radius: 5px;
-  font-size: 18px;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: background-color 0.3s;
+.tecla {
+    width: 40px;
+    height: 50px;
+    margin: 2px;
+    background-color: #d3d6da;
+    border: 1px solid #999999;
+    border-radius: 5px;
+    font-size: 18px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-.key:active {
-  background-color: #bbbbbb;
+.tecla:active {
+    background-color: #bbbbbb;
 }
 
-.key.wide {
-  width: 63px;
+.tecla.ancha {
+    width: 63px;
 }
 
-.key:hover {
-  background-color: #88aadd;
+.tecla:hover {
+    background-color: #88aadd;
 }
 
 footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: #88aadd;
-
-  color: #000000;
-  font-size: 0.9rem;
-  text-align: center;
-
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #88aadd;
+    color: #000000;
+    font-size: 0.9rem;
+    text-align: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 footer p {
-  font-size: 0.9rem;
+    font-size: 0.9rem;
 }
