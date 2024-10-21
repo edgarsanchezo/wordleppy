@@ -72,11 +72,11 @@ body {
 }
 
 .celda.absent {
-    background-color: #3a3a3c;
+    background-color: #787c7e;
 }
 
 /* TECLADO */
-.teclado-contenedor {
+.teclado {
     display: flex;
     flex-direction: column;
     gap: 2px;
@@ -101,9 +101,9 @@ body {
     transition: background-color 0.3s;
 }
 
-.tecla:active {
-    background-color: #bbbbbb;
-}
+/* .tecla:active {
+    background-color: #d3d6da;
+} */
 
 .tecla.ancha {
     width: 63px;
